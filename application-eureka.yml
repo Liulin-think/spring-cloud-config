@@ -4,7 +4,8 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.server.port}/eureka/
   instance:
-    leaseRenewalIntervalInSeconds: 10
+    lease-renewal-interval-in-seconds: 1 # 心跳检测检测与续约时间
+    lease-expiration-duration-in-seconds: 2
     hostname: 127.0.0.1
     server:
       port: 8081
