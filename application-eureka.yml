@@ -1,11 +1,12 @@
 
 eureka:
   client:
+    registry-fetch-interval-seconds: 1 #eureka client刷新本地缓存时间，默认30
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.server.port}/eureka/
   instance:
     lease-renewal-interval-in-seconds: 1 # 心跳检测检测与续约时间
-    lease-expiration-duration-in-seconds: 2
+    lease-expiration-duration-in-seconds: 1
     hostname: 127.0.0.1
     server:
       port: 8081
